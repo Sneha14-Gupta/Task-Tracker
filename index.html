@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcakes">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -7,8 +7,27 @@
     <title>Tasky</title>
   </head>
   <body>
-    <h1 class="underline text-xl font-serif text-blue-400">hello user</h1>
-    <div class="h-80 w-60 bg-gray-400"></div>
+    <!-- MARK:Navbar -->
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Tasky</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="#">Github</a></li>
+          <li>
+            <details>
+              <summary>Links</summary>
+              <ul class="bg-base-100 rounded-t-none p-2">
+                <li><a>Link 1</a></li>
+                <li><a>Link 2</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <script type="module" src="src/main.js"></script>
   </body>
 </html>
