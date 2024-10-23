@@ -15,35 +15,50 @@
     <!-- MARK:Navbar -->
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="btn btn-ghost text-xl">Taksey</a>
+        <a class="btn btn-ghost text-xl md:text-2xl">Taksey</a>
       </div>
       <div class="flex-none">
         <a
           href="http://github.com/Sneha14-Guta/Task-Tracker"
           class="btn btn-square btn-ghost"
+          target="_blank"
         >
           <i class="ti ti-brand-github text-2xl"></i>
         </a>
       </div>
     </div>
+
     <!-- MARK:Main -->
-    <main class="container">
-      <div class="card bg-base-100 w-96 shadow-xl">
+    <main class="container h-screen flex justify-center items-center">
+      <div class="card bg-base-100 w-72 sm:w-80 md:w-96 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
+            alt="Pattern"
           />
         </figure>
         <div class="card-body">
-          <h2 class="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
+          <h2 class="card-title">Taskey &mdash; Organise yourself!</h2>
+          <form>
+            <input
+              type="text"
+              placeholder="Add Task"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </form>
         </div>
       </div>
     </main>
+
+    <!-- MARK :Footer -->
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>
+          Copyright © {new Date().getFullYear()} - All right reserved by
+          <a href="http://github.com/Sneha14-Guta">Sneha</a>
+        </p>
+      </aside>
+    </footer>
 
     <script type="module" src="src/main.js"></script>
   </body>
