@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="cupcakes">
+<html lang="en" data-theme="cupcake">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasky</title>
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
   </head>
   <body>
     <!-- MARK:Navbar -->
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="btn btn-ghost text-xl">Tasky</a>
+        <a class="btn btn-ghost text-xl">Taksey</a>
       </div>
       <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="#">Github</a></li>
-          <li>
-            <details>
-              <summary>Links</summary>
-              <ul class="bg-base-100 rounded-t-none p-2">
-                <li><a>Link 1</a></li>
-                <li><a>Link 2</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+        <a
+          href="http://github.com/Sneha14-Guta/Task-Tracker"
+          class="btn btn-square btn-ghost"
+        >
+          <i class="ti ti-brand-github text-2xl"></i>
+        </a>
       </div>
     </div>
+    <!-- MARK:Main -->
+    <main class="container">
+      <div class="card bg-base-100 w-96 shadow-xl">
+        <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Shoes"
+          />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Shoes!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="src/main.js"></script>
   </body>
