@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    fontFamily:{
+      'figtree':["figtree","sans-sarif"]
+    }
   },
   plugins: [require("daisyui")],
   daisyui: {
