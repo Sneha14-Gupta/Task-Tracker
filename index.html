@@ -38,7 +38,7 @@
 
     <!-- MARK:Main -->
     <main class="h-screen flex justify-center items-center glass">
-      <div class="card bg-slate-100 w-72 sm:w-80 md:w-96 shadow-2xl">
+      <div class="card bg-slate-100 w-72 sm:w-80 md:w-96 shadow-2xl my-4">
         <figure>
           <img
             src="./public/cardimg.jpg"
@@ -53,16 +53,17 @@
               type="text"
               placeholder="Add Task"
               class="input input-bordered w-full max-w-xs"
+              data-user-input
             />
           </form>
-          <!-- Task Conatiner -->
-          <div class="form-control" data-task-container>
+          <!-- Task Container -->
+          <div class="form-control flex flex-col gap-3" data-task-container>
             <!-- Single Task -->
             <label class="label cursor-pointer">
               <span class="label-text">Remember me</span>
               <input type="checkbox" class="checkbox" />
             </label>
-            <label class="label cursor-pointer bg-slate-200">
+            <label class="label cursor-pointer bg-slate-200 rounded">
               <span class="label-text">Remember me</span>
               <input type="checkbox" checked="checked" class="checkbox" />
             </label>
