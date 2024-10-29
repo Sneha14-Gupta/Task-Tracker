@@ -7,10 +7,9 @@ const formEl = document.querySelector("[data-form]");
 const inputEl = document.querySelector("[data-user-input]");
 const showYearEl = document.querySelector(".show-year");
 const taskContainerEl = document.querySelector("[data-task-container]");
-
 showYearEl.textContent = new Date().getFullYear();
 
-// / variable
+//  variable
 let state = [];
 
 function toggleCompleted(id) {
@@ -58,3 +57,4 @@ taskContainerEl.addEventListener("click", (e) => {
     renderTask();
   }
 });
+
