@@ -1,16 +1,15 @@
-export default function (text, isCompleted,id) {
+export default function (text, isCompleted, id) {
   const label = document.createElement("label");
   label.classList.add("label", "cursor-pointer");
 
-  
- if (isCompleted) {
-    label.classList.add("bg-slate-200","rounded");
+  if (isCompleted) {
+    label.classList.add("bg-slate-200", "rounded");
   }
-  
+
   label.innerHTML = `
      <span class="label-text">${text}</span>
-     <input type="checkbox" ${isCompleted && "checked"} class="checkbox" id=${id}/>
-
-    `;
+     <input type="checkbox" ${
+       isCompleted && "checked"
+     } class="checkbox" id=${id} /> `;
   return label;
 }
