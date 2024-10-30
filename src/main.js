@@ -1,6 +1,7 @@
 import "./index.css";
 import localforage from "localforage";
 import SingleTask from "./componenets/SingleTask";
+import { sortBy } from "lodash";
 import { titleCase, randomID } from "./utils";
 import { formEl, inputEl, taskContainerEl } from "./componenets/Domselection";
 
@@ -78,9 +79,13 @@ formEl.addEventListener("submit", (e) => {
 
 taskContainerEl.addEventListener("click", (e) => {
   if (e.target.tagName === "INPUT") {
-    // to toggle
+    // change the state
+
     toggleCompleted(e.target.id);
-    state.sort((a, b) => a.isCompleted - b.isCompleted);
+    
+    // state.sort((a, b) => a.isCompleted - b.isCompleted);
+
+    state = sortBy(state, "[isCompleted]");
     updateLocal();
     renderTask();
   }
