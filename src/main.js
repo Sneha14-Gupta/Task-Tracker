@@ -1,16 +1,37 @@
 import "./index.css";
+import localforage from "localforage";
 import SingleTask from "./componenets/SingleTask";
 import { titleCase, randomID } from "./utils";
+import { formEl, inputEl, taskContainerEl } from "./componenets/Domselection";
 
 // DOM  targeting
-const formEl = document.querySelector("[data-form]");
-const inputEl = document.querySelector("[data-user-input]");
+
 const showYearEl = document.querySelector(".show-year");
-const taskContainerEl = document.querySelector("[data-task-container]");
 showYearEl.textContent = new Date().getFullYear();
+
+// localforage.setItem("button","structs");
+// localforage.getItem("button").then(console.log);
+
+localforage.setDriver(localforage.LOCALSTORAGE);
 
 //  variable
 let state = [];
+
+function updateLocal() {
+  localforage.setItem("tasks", state);
+}
+
+localforage.getItem("tasks").then((data) => {
+  state = data || [];
+  renderTask();
+});
+
+function clearTask() {
+  state.length = 0;
+  updateLocal();
+  renderTask();
+  inputEl.value = "";
+}
 
 function toggleCompleted(id) {
   state = state.map((task) => {
@@ -19,9 +40,10 @@ function toggleCompleted(id) {
     }
     return task;
   });
+  updateLocal();
 }
 
-// function to rendertask
+// function rendertask
 
 function renderTask() {
   taskContainerEl.innerHTML = "";
@@ -32,10 +54,13 @@ function renderTask() {
   taskContainerEl.appendChild(frag);
 }
 
-
+// MARK :Listener(on new task)
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // guard clause
   if (!inputEl.value) return;
+  if (inputEl.value === ":clearall") return clearTask();
 
   //   creating new task
 
@@ -46,15 +71,17 @@ formEl.addEventListener("submit", (e) => {
   };
 
   state.unshift(newTask);
+  updateLocal();
   renderTask();
   inputEl.value = "";
 });
 
 taskContainerEl.addEventListener("click", (e) => {
   if (e.target.tagName === "INPUT") {
+    // to toggle
     toggleCompleted(e.target.id);
     state.sort((a, b) => a.isCompleted - b.isCompleted);
+    updateLocal();
     renderTask();
   }
 });
-
